@@ -208,5 +208,5 @@ __marimo__/
 
 # PyCharm Cache
 .idea
-
+.DS_Store
 
