@@ -1,0 +1,42 @@
+.title {
+    font-size: 100px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.text {
+    font-size: 20px;
+}
+
+.get-started {
+    margin-top: 20px;
+    padding: 20px 50px;
+    font-size: 17px;
+    background-color: white;
+    color: black;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 15px; 
+}
+
+.get-started {
+  transition: transform 90ms var(--bubble-ease, cubic-bezier(.22,1,.36,1)),
+              background .25s, box-shadow .25s;
+  transform: translateZ(0);
+}
+.get-started:active {
+  transform: translateY(.5px) scale(.98);
+}
+
+.get-started,
+.get-started:focus,
+.get-started:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+.get-started {
+    -webkit-tap-highlight-color: transparent;
+}
