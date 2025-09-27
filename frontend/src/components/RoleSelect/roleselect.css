@@ -1,0 +1,21 @@
+.role-wrap{
+    min-height: calc(100dvh - var(--nav-h) - var(--nav-gap));
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 18px;
+    padding: 24px;
+  }
+  
+  .role-title{
+    font-size: clamp(28px, 5vw, 44px);
+    margin: 0 0 14px 0;
+  }
+  
+  .role-buttons{
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
