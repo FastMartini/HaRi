@@ -4,6 +4,7 @@
   --text: #f5f5f5;
   --muted: #d1d5db;
   --border: rgba(255,255,255,.12);
+  --brand-logo: 20px;
 }
 
 /* Wrapper sticks to the top but is transparent/full-width */
@@ -37,8 +38,9 @@
 }
 
 /* Typography/links (unchanged) */
-.brand{ font-weight: 600; letter-spacing: -.01em; color: var(--text); text-decoration: none; justify-self: start;}
+.brand{ font-size: 20px; font-weight: 600; letter-spacing: -.01em; color: var(--text); text-decoration: none; justify-self: start; display: inline-flex; align-items: center; gap: 10px;}
 .brand:hover{ color: #fff; }
+.brand-logo{ width: var(--brand-logo); height: var(--brand-logo); display: block; flex: 0 0 auto; border-radius: 4px;}
 .links{ display: none; gap: 24px; }
 .links a{ color: var(--muted); font-size: .92rem; text-decoration: none; transition: color .2s; }
 .links a:hover{ color: #fff; }

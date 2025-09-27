@@ -1,4 +1,6 @@
 import "./navbar.css";
+import logo from "../../assets/hari-mark.png";
+
 
 
 export default function Navbar() {
@@ -7,7 +9,10 @@ return (
 <header className="navbar">
 <div className="inner">
 {/* Left: Brand */}
-<a href="#" className="brand">HaRi</a>
+<a href="/" className="brand">
+  <img src={logo} className="brand-logo" />
+  <span>HaRi</span>
+</a>
 
 
 {/* Center: Links */}
@@ -41,7 +46,9 @@ return (
 
 {/* Spacer so content doesn't sit under the bar */}
 <div className="navbar-spacer" />
+
 </>
+
 );
 }
 

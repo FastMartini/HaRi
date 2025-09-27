@@ -28,6 +28,7 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background-color: rgb(23, 23, 23);
 }
 
 h1 {
@@ -66,3 +67,48 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/* Base + stacking so content sits above the glow */
+html, body { height: 100%; background: #0f0f10; overflow-x: clip; }
+#root { position: relative; z-index: 1; }   /* all app content above the glow */
+
+/* defaults + custom properties */
+@property --mx { syntax: '<percentage>'; inherits: false; initial-value: 50%; }
+@property --my { syntax: '<percentage>'; inherits: false; initial-value: 40%; }
+:root { --mx: 50%; --my: 40%; --glow-ease: cubic-bezier(.22,1,.36,1); }
+
+/* DEFAULT = wander */
+body::before{
+  content:"";
+  position: fixed;
+  inset: -30% -30%;
+  z-index: 0;
+  pointer-events: none;
+  filter: blur(50px);
+  mix-blend-mode: screen;
+  background:
+    radial-gradient(closest-side at var(--mx) var(--my),
+      rgba(102,140,255,.55) 0%, rgba(102,140,255,.25) 35%, transparent 60%),
+    radial-gradient(closest-side at calc(var(--mx) + 15%) calc(var(--my) + 10%),
+      rgba(154,124,255,.28) 0%, transparent 60%),
+    radial-gradient(closest-side at calc(var(--mx) - 12%) calc(var(--my) + 14%),
+      rgba(34,197,94,.18) 0%, transparent 60%);
+  animation: spotlight-wander 20s ease-in-out infinite alternate;
+}
+
+/* FOLLOW = turn off wander; JS lerps --mx/--my every frame */
+body.glow-follow::before{
+  animation: none;
+  transition: --mx 140ms var(--glow-ease), --my 140ms var(--glow-ease);
+}
+
+/* keep this AFTER the block above */
+@keyframes spotlight-wander{
+  0%   { transform: translate(-10%,  8%)  rotate(-2deg) scale(1); }
+  25%  { transform: translate( 15%, -8%)  rotate( 1deg) scale(1.05); }
+  50%  { transform: translate( 28%, 12%)  rotate( 0deg) scale(.98); }
+  75%  { transform: translate(-12%, 16%)  rotate(-1deg) scale(1.03); }
+  100% { transform: translate(-10%,  8%)  rotate( 0deg) scale(1); }
+}
+
+

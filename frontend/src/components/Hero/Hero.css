@@ -1,7 +1,11 @@
 .title {
-    font-size: 100px;
+    font-size: 120px;
     font-weight: bold;
     margin: 0;
+}
+
+.title-accent {
+    color: #7c83ff;
 }
 
 .text {
@@ -18,16 +22,24 @@
     border-radius: 15px;
     cursor: pointer;
     font-weight: bold;
-    margin-bottom: 15px; 
+    margin-bottom: 15px;
+    transform: translateY(0) scale(1);
+    transition: transform 380ms cubic-bezier(.22,1,.36,1),
+    will-change;
 }
 
-.get-started {
-  transition: transform 90ms var(--bubble-ease, cubic-bezier(.22,1,.36,1)),
-              background .25s, box-shadow .25s;
-  transform: translateZ(0);
+.get-started:hover {
+    transform: translateY(0) scale(1.05);
+    animation: none;
+
 }
+
 .get-started:active {
   transform: translateY(.5px) scale(.98);
+}
+
+.get-started{
+    animation: none;
 }
 
 .get-started,
@@ -40,3 +52,21 @@
 .get-started {
     -webkit-tap-highlight-color: transparent;
 }
+
+:root{
+  --nav-h: 56px;   /* your bar's height */
+  --nav-gap: 12px; /* the gap from the very top */
+}
+
+.hero{
+  /* fill viewport minus navbar */
+  min-height: calc(100dvh - var(--nav-h) - var(--nav-gap));
+  place-content: center;   /* vertical + horizontal centering */
+  text-align: center;
+  /* comfortable breathing room */
+  padding-block: clamp(24px, 6vh, 72px) clamp(48px, 10vh, 96px);
+}
+
+/* If your h1 adds extra space, keep it tight */
+.title{ margin-top: 0; }
+
