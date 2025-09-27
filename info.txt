@@ -1,0 +1,5 @@
+User Story:
+
+As an HR manager of a growing company,
+I want an autonomous onboarding assistant
+so that new hires can complete forms, training modules, and ask HR questions without requiring constant manual oversight.
