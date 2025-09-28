@@ -25,10 +25,6 @@ class RequestQuery(BaseModel):
 class ResponseQuery(BaseModel):
     response: str
 
-# This is used to parse through the JSON files the API recieves
-# Please scroll down to the ask function for more information.
-count = 0
-
 # This random number ensurses each time the API starts, it will start a new AI session
 # It doesn't matter if the ADK api server has sessions or not; this will ensure that the API will engage in a fresh session
 
@@ -99,15 +95,9 @@ async def ask(query: RequestQuery):
     # Sends the query to the API and saves the response it recieves.
     response = requests.post(run_url, json=body, headers=headers).json()
 
-    # The count variable is used to grab the actual response from the API
-    # A huge blocker I've encountered is that the location of the AI-generated text in the JSON file changes after the first query
-    # This count variable keeps track of the amount of queries calls made to the AI agent
-    # If the program detects that the query is not the first one, it will parse through the JSON differently.
-    count += 1
-
     # As previously stated above, this section extracts the AI-generated response from the JSON file.
     # It uses count to know which method should be run.
-    if count > 1:
+    if len(response) > 1:
         return_body = response[2]["content"]["parts"][0]["text"]
     else:
         return_body = response[0]["content"]["parts"][0]["text"]
