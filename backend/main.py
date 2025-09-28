@@ -1,5 +1,3 @@
-from fastapi import FastAPI
-from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import random, requests
 
@@ -122,7 +120,3 @@ def session():
     response = requests.get(session_url, headers=headers).json()
 
     return response
-
-
-
-

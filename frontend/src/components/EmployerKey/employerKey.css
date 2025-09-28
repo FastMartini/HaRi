@@ -1,0 +1,22 @@
+.key-wrap{
+    min-height: calc(100dvh - var(--nav-h) - var(--nav-gap));
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 12px;
+    padding: 24px;
+  }
+  
+  .key-title{ font-size: clamp(26px,4vw,36px); margin: 0; }
+  .key-sub{ color:#cfcfcf; margin: 0 0 6px; }
+  
+  .key-input{
+    width: min(420px, 92vw);
+    margin: 0 auto;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: #0f0f10; color: #fff;
+  }
+  
+  .key-err{ color:#ffadad; font-size:.95rem; }
