@@ -1,0 +1,33 @@
+.comms-wrap{ min-height: calc(100dvh - var(--nav-h) - var(--nav-gap)); padding: 200px 20px 28px; }
+.comms-title{ text-align:center; margin:0 0 6px; font-size:clamp(24px,4vw,36px); }
+.back-btn{ display:block; margin:0 auto 18px; background:none; border:none; color:#888; cursor:pointer; transition:color .25s; }
+.back-btn:hover{ color:#7c83ff; }
+
+.comms-grid{ width:min(1100px,94vw); margin:0 auto; display:grid; grid-template-columns: 280px 1fr; gap:16px; }
+
+/* roster */
+.roster{ background:rgba(20,20,20,.75); border:1px solid rgba(255,255,255,.12); border-radius:12px; padding:8px; display:flex; flex-direction:column; gap:6px; }
+.roster-item{ display:flex; align-items:center; gap:10px; padding:10px; border-radius:10px; background:transparent; border:1px solid transparent; color:#e7e7e7; cursor:pointer; text-align:left; }
+.roster-item:hover{ background:rgba(255,255,255,.05); }
+.roster-item.active{ border-color:#7c83ff; background:rgba(124,131,255,.12); }
+.avatar{ width:28px; height:28px; border-radius:50%; background:#2a2a2a; display:grid; place-items:center; font-weight:700; }
+.avatar.big{ width:34px; height:34px; }
+.name{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+
+/* thread */
+.thread{ background:rgba(20,20,20,.75); border:1px solid rgba(255,255,255,.12); border-radius:12px; display:flex; flex-direction:column; }
+.thread-head{ display:flex; align-items:center; gap:10px; padding:12px 14px; border-bottom:1px solid rgba(255,255,255,.08); }
+.who .n{ font-weight:600; }
+.who .sub{ color:#bdbdbd; font-size:.9rem; }
+
+.msgs{ padding:14px; display:flex; flex-direction:column; gap:10px; max-height:48vh; overflow:auto; }
+.msg{ display:flex; }
+.msg.in  { justify-content:flex-start; }
+.msg.out { justify-content:flex-end; }
+.bubble{ max-width:70%; padding:10px 12px; border-radius:12px; background:#2a2a2a; color:#fff; }
+.msg.out .bubble{ background:#7c83ff; color:#fff; }
+
+.composer{ display:flex; gap:8px; padding:12px; border-top:1px solid rgba(255,255,255,.08); }
+.compose-input{ flex:1; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.16); background:#0f0f10; color:#fff; }
+.send-btn{ padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:transparent; color:#cfcfcf; transition:color .25s, border-color .25s; }
+.send-btn:hover{ color:#fff; border-color:#7c83ff; }
