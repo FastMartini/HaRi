@@ -27,6 +27,8 @@ Backend:
 * As the frontend grew with multiple nested views, managing a plethora of URL paths and view states was tricky and required careful state management and consistent routing.
 <img width="145" height="152" alt="Screenshot 2025-09-28 at 9 14 40 AM" src="https://github.com/user-attachments/assets/e86ce058-ada2-4b12-a42b-5e5b2e7ae4b8" />
 
+* Connecting our FastAPI backend to the React + Vite frontend required careful handling of CORS, asynchronous API calls, and maintaining ADK session state. We used FastAPI’s CORSMiddleware to handle cross-origin requests and expose endpoints (/ask, /session) to the frontend. We also integrated the AdkConsole component into the frontend as a dedicated interface for sending and receiving messages from the ADK agent in real time. AdkConsole acted as a live test harness and ensured that the Gemini-powered agent was functioning end-to-end.
+
 ## Accomplishments that we're proud of
 * Built a full-stack, minimum viable product in a weekend that combines a sleek UI, a FastAPI backend, and a generative AI agent.
 * Implemented loop and parallel agent architecture so onboarding tasks can progress autonomously and concurrently.
