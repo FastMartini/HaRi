@@ -25,7 +25,12 @@ return (
 
 {/* Right: Discover us (always visible) + Mobile menu */}
 <div className="right">
-<a href="/discover" className="cta">Discover us</a>
+  <div className="auth-links">
+    <a href="/sign">Log in</a>
+    <a href="/log">Sign up</a>
+  </div>
+  <a href="/discover" className="cta">Discover us</a>
+
 
 
 <details className="menu">

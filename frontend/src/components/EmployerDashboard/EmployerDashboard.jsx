@@ -7,7 +7,7 @@ const AGENTS = [
   "Training Orchestrator",
   "FAQ / Policy Agent",
   "Background Check Agent",
-  "Equipment Provisioning Agent"
+  "Emergency Contact Agent"
 ];
 
 export default function EmployerDashboard({ onConfirm = () => {} }) {

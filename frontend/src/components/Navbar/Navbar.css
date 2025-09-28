@@ -17,6 +17,26 @@
   border: 0;        /* no full-width border */
 }
 
+.navbar .right .nav-auth,
+.navbar .right .nav-auth:visited {
+  color: var(--muted);
+  text-decoration: none;
+  transition: color .2s;
+}
+.navbar .right .nav-auth:hover { color: #fff; }
+
+.right a {
+  color: var(--muted);
+  font-size: .92rem;
+  text-decoration: none;
+  transition: color .2s;
+  margin-left: 14px;   /* 👈 adds spacing only between Log in and Sign up */
+}
+
+.right a:hover {
+  color: #fff;
+}
+
 /* The actual bar: centered, not full width, with border & radius */
 .inner{
   width: min(1100px, calc(100% - 32px)); /* 16px side gutters */
