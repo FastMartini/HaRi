@@ -1,5 +1,7 @@
 from pydantic import BaseModel
 import random, requests
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 # This models handles the request body of the HTTP POST request to http://localhost:7999/ask
 # The body of the request must follow the following format
