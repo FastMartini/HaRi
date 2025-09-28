@@ -38,5 +38,14 @@
 }
 
 .read-the-docs {
-  color: #888;
+  color: #888;                    
 }
+
+.view{
+  transition: opacity 280ms cubic-bezier(.22,1,.36,1),
+              transform 280ms cubic-bezier(.22,1,.36,1);
+  will-change: opacity, transform;
+}
+.view.in{ opacity: 1; transform: translateY(0); }
+.view.out{ opacity: 0; transform: translateY(8px); }
+

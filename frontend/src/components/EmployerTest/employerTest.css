@@ -1,0 +1,68 @@
+.emp-wrap {
+    min-height: calc(100dvh - var(--nav-h) - var(--nav-gap));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    text-align: center;
+    padding: 24px;
+  }
+  
+  .emp-title {
+    margin: 0;
+    font-size: clamp(24px,4vw,36px);
+  }
+  
+  .emp-sub {
+    color: #cfcfcf;
+    margin-top: -10px;
+  }
+  
+  .test-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    justify-content: center;
+  }
+  
+  .emp-actions {
+    max-width: 600px;
+    text-align: left;
+    margin-top: 20px;
+  }
+  
+  .actions-title {
+    margin-bottom: 14px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .actions-buttons {
+    display: flex;
+    flex-direction: column; /* stack vertically */
+    gap: 12px;
+    align-items: center;
+  }
+  
+  .action-btn {
+    background: none;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #cfcfcf;
+    padding: 12px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: color 0.3s ease, border-color 0.3s ease;
+    width: min(320px, 90%);
+    text-align: center;
+  }
+  
+  .action-btn:hover {
+    color: #7c83ff;                     /* your purple hue */
+    border-color: #7c83ff;
+  }
+  
+  

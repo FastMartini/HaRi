@@ -1,0 +1,59 @@
+.progress-wrap{
+  min-height: calc(100dvh - var(--nav-h) - var(--nav-gap));
+  padding: 500px 20px 40px;   /* was 40px top → now 90px */
+  text-align: center;
+}
+  
+  .progress-title {
+    font-size: clamp(24px, 4vw, 36px);
+    margin-bottom: 20px;
+  }
+  
+  .back-btn {
+    background: none;
+    border: none;
+    color: #888;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: color 0.3s;
+  }
+  .back-btn:hover { color: #7c83ff; }
+  
+  .employee-list {
+    max-width: 700px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .employee-row {
+    display: grid;
+    grid-template-columns: 1fr 4fr 60px;
+    align-items: center;
+    gap: 12px;
+    background: rgba(20,20,20,.75);
+    border-radius: 12px;
+    padding: 12px 16px;
+  }
+  
+  .emp-name { color: #fff; }
+  
+  .progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #333;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+  }
+  .progress-fill {
+    height: 100%;
+    background: #7c83ff;
+    transition: width 0.3s ease;
+  }
+  .progress-text {
+    color: #fff;
+    font-size: 0.9rem;
+  }
+  
