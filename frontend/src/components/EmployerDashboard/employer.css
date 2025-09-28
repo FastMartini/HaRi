@@ -1,0 +1,53 @@
+.emp-wrap{
+    min-height: calc(100dvh - var(--nav-h) - var(--nav-gap));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;     /* center vertically */
+    gap: 24px;
+    text-align: center;
+    padding: 24px;
+  }
+  
+  .emp-title{ margin: 0; font-size: clamp(24px, 4vw, 36px); }
+  
+  .agents-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    width: min(900px, 92vw);
+  }
+  
+  /* use your .get-started style as base; add tweaks for grid buttons */
+  .agent-btn{
+    margin: 0;                 /* remove global margins so grid is tight */
+    width: 100%;
+    padding: 14px 18px;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,.18);
+    background: #ffffff;
+    color: #0a0a0a;
+    transition: transform 120ms ease, box-shadow .2s, background .2s, border-color .2s;
+  }
+  
+  /* highlight when selected */
+  .agent-btn.selected{
+    background: #7c83ff;                 /* accent */
+    color: #fff;
+    border-color: #7c83ff;
+    box-shadow: 0 0 0 3px rgba(124,131,255,.25);
+  }
+  
+  /* keep hover subtle, no layout shift */
+  .agent-btn:hover{ transform: translateY(-1px); }
+  .agent-btn:active{ transform: translateY(0); }
+  
+  .selected-readout{
+    color: #cfcfcf;
+    font-size: .95rem;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  

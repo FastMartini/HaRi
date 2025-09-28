@@ -1,0 +1,20 @@
+.gate-wrap{
+    min-height: calc(100dvh - var(--nav-h) - var(--nav-gap));
+    display: grid;
+    place-content: center;
+    text-align: center;
+    gap: 14px;
+    padding: 24px;
+  }
+  .gate-title{ font-size: clamp(26px,4vw,36px); margin: 0; }
+  .gate-sub{ color:#cfcfcf; margin: 0 0 6px; }
+  .gate-input{
+    width: min(420px, 90vw);
+    margin: 0 auto;
+    padding: 12px 14px;
+    border-radius: 12px;
+    border: 1px solid rgba(255,255,255,.16);
+    background: #0f0f10; color: #fff;
+  }
+  .gate-err{ color:#ffadad; font-size:.95rem; }
+  
