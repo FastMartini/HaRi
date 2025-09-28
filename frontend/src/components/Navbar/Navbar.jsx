@@ -19,7 +19,26 @@ return (
 <nav className="links">
 <a href="/pricing">Pricing</a>
 <a href="/docs">Docs</a>
-<a href="/resources">Resources</a>
+
+<details className="link-dropdown">
+    <summary>
+      <span>Resources</span>
+      {/* caret toggles ↓/↑ via rotation */}
+      <svg
+        className="res-caret"
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path d="M6 9l6 6 6-6" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round"/>
+      </svg>
+    </summary>
+
+    <div className="link-dd">
+      <a href="/resources/employees">For employees</a>
+      <a href="/resources/employers">For employers</a>
+    </div>
+  </details>
 </nav>
 
 
@@ -41,7 +60,7 @@ return (
 <div className="dropdown">
 <a href="/pricing">Pricing</a>
 <a href="/docs">Docs</a>
-<a href="/resources">Resources</a>
+<a href="/Resources">Resources</a>
 </div>
 </details>
 </div>

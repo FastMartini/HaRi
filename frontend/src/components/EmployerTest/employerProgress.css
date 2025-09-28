@@ -5,7 +5,7 @@
 }
   
   .progress-title {
-    font-size: 5rem;
+    font-size: clamp(24px, 4vw, 36px);
     margin-bottom: 20px;
   }
   
