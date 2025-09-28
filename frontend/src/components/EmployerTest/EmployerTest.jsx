@@ -2,12 +2,16 @@ import { useState } from "react";
 import "./employerTest.css";
 import EmployerProgress from "./EmployerProgress";
 import EmployerComms from "./EmployerComms";
+import EmployerDocs from "./EmployerDocs";
+import EmployerKeyRotate from "./EmployerKeyRotate";
 
 export default function EmployerTest() {
   const [view, setView] = useState("main"); // 'main' | 'progress' | 'comms'
 
   if (view === "progress") return <EmployerProgress onBack={() => setView("main")} />;
   if (view === "comms") return <EmployerComms onBack={() => setView("main")} />;
+  if (view === "docs") return <EmployerDocs onBack={() => setView("main")} />;
+  if (view === "keys") return <EmployerKeyRotate onBack={() => setView("main")} />;
 
   return (
     <div className="emp-wrap">
@@ -23,8 +27,8 @@ export default function EmployerTest() {
           <button className="action-btn" onClick={() => setView("progress")}>
             View employees and track their progress
           </button>
-          <button className="action-btn">Upload or manage documents/modules</button>
-          <button className="action-btn">Update or rotate your company login key</button>
+          <button className="action-btn" onClick={() => setView("docs")}>Upload or manage documents/modules</button>
+          <button className="action-btn" onClick={() => setView("keys")}>Update or rotate your company login key</button>
           <button className="action-btn" onClick={() => setView("comms")}>
             Communicate with employees for support
           </button>

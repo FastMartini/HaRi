@@ -61,7 +61,7 @@
 .brand{ font-size: 20px; font-weight: 600; letter-spacing: -.01em; color: var(--text); text-decoration: none; justify-self: start; display: inline-flex; align-items: center; gap: 10px;}
 .brand:hover{ color: #fff; }
 .brand-logo{ width: var(--brand-logo); height: var(--brand-logo); display: block; flex: 0 0 auto; border-radius: 4px;}
-.links{ display: none; gap: 24px; }
+.links{ display: none; gap: 100px; align-items: center; margin-left: 160px;}
 .links a{ color: var(--muted); font-size: .92rem; text-decoration: none; transition: color .2s; }
 .links a:hover{ color: #fff; }
 
@@ -183,7 +183,8 @@
 }
 
 .navbar .cta:hover{
-  background: #f2f2f2;
+  background: black;
+  border-color: white;
 }
 
 .navbar .cta:active{
@@ -193,4 +194,99 @@
 .navbar .cta:focus-visible{
   outline: none;
   box-shadow: 0 0 0 3px rgba(255,255,255,.35);
+}
+
+/* ensure container hugs text so dropdown centers under it */
+.link-dropdown{
+  flex: 0 0 auto;
+}
+.link-dropdown > summary{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;                 /* space between label and icon */
+  list-style: none;
+  cursor: pointer;
+  color: var(--muted);
+  font-size: .92rem;
+  padding: 0;
+}
+.link-dropdown > summary::-webkit-details-marker{ display:none; }
+.link-dropdown > summary:hover{ color:#fff; }
+
+/* the = / X icon */
+.res-toggle{
+  position: relative;
+  width: 16px; height: 16px;
+  flex: 0 0 16px;
+}
+.res-toggle::before,
+.res-toggle::after{
+  content:"";
+  position: absolute;
+  left: 0; right: 0;
+  height: 2px;
+  background: var(--muted);
+  border-radius: 2px;
+  transition:
+    transform 220ms cubic-bezier(.22,1,.36,1),
+    top 220ms cubic-bezier(.22,1,.36,1),
+    background-color .2s;
+}
+/* two horizontal lines (closed state) */
+.res-toggle::before{ top: 4px; }
+.res-toggle::after{  top: 10px; }
+
+/* morph to X when open */
+.link-dropdown[open] .res-toggle::before{
+  top: 7px; transform: rotate(45deg);
+}
+.link-dropdown[open] .res-toggle::after{
+  top: 7px; transform: rotate(-45deg);
+}
+
+/* hover color sync */
+.link-dropdown > summary:hover .res-toggle::before,
+.link-dropdown > summary:hover .res-toggle::after{
+  background: #fff;
+}
+
+/* dropdown panel directly under "Resources" */
+.link-dd{
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(-8px);
+  min-width: 220px;
+  width: max-content;
+  white-space: nowrap;
+  z-index: 1001;
+
+  background: rgba(20,20,20,.97);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,.35);
+
+  opacity: 0;
+  pointer-events: none;
+}
+.link-dropdown[open] .link-dd{
+  opacity: 1;
+  pointer-events: auto;
+  animation: bubbleIn var(--bubble-duration) var(--bubble-ease) both;
+}
+.link-dd a{
+  display:block; padding:10px 14px; color:var(--muted); text-decoration:none; font-size:.92rem;
+}
+.link-dd a:hover{ background: rgba(255,255,255,.06); color:#fff; }
+
+.res-caret{
+  width: 14px; height: 14px;
+  transition: transform 220ms cubic-bezier(.22,1,.36,1), color .2s;
+  transform: rotate(0deg);
+  opacity: .9;
+}
+.link-dropdown[open] .res-caret{
+  transform: rotate(180deg);  
 }
