@@ -1,0 +1,19 @@
+.adk-wrap{ min-height:calc(100dvh - var(--nav-h) - var(--nav-gap)); padding:200px 20px 28px; }
+.adk-title{ text-align:center; margin:0 0 8px; font-size:clamp(24px,4vw,36px); }
+.back-btn{ display:block; margin:0 auto 12px; background:none; border:none; color:#888; cursor:pointer; transition:color .25s; }
+.back-btn:hover{ color:#7c83ff; }
+
+.session-chip{ text-align:center; color:#bdbdbd; margin-bottom:10px; }
+.adk-console{ width:min(1000px,94vw); margin:0 auto; border:1px solid rgba(255,255,255,.12); border-radius:12px; background:rgba(20,20,20,.75); display:flex; flex-direction:column; }
+.adk-history{ padding:14px; display:flex; flex-direction:column; gap:10px; max-height:50vh; overflow:auto; }
+.adk-msg{ display:flex; }
+.adk-msg.user{ justify-content:flex-end; }
+.adk-msg.agent{ justify-content:flex-start; }
+.bubble{ max-width:75%; padding:10px 12px; border-radius:12px; background:#2a2a2a; }
+.adk-msg.user .bubble{ background:#7c83ff; color:#fff; }
+
+.adk-input-row{ display:flex; gap:8px; padding:12px; border-top:1px solid rgba(255,255,255,.08); }
+.adk-input{ flex:1; padding:12px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.16); background:#0f0f10; color:#fff; }
+.send-btn{ padding:10px 14px; border-radius:12px; border:1px solid rgba(255,255,255,.18); background:transparent; color:#cfcfcf; transition:color .25s, border-color .25s; }
+.send-btn:hover{ color:#fff; border-color:#7c83ff; }
+.adk-err{ color:#ffadad; padding:0 14px 14px; }

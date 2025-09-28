@@ -64,7 +64,8 @@ app = FastAPI()
 # Additionally, it will keep the connection between the frontend and backend secure.
 # I will work on this more tomorrow
 origins = [
-    "http://localhost:7999/"
+    "http://localhost:7999",
+    "http://localhost:5173"
 ]
 
 app.add_middleware(
