@@ -58,7 +58,6 @@ app = FastAPI()
 
 # Ensures the localhost is running on the 7999 port.
 # Additionally, it will keep the connection between the frontend and backend secure.
-# I will work on this more tomorrow
 origins = [
     "http://localhost:7999",
     "http://localhost:5173"
@@ -95,8 +94,12 @@ async def ask(query: RequestQuery):
     # Sends the query to the API and saves the response it recieves.
     response = requests.post(run_url, json=body, headers=headers).json()
 
-    # As previously stated above, this section extracts the AI-generated response from the JSON file.
-    # It uses count to know which method should be run.
+    # This section extracts the AI-generated response from the JSON response.
+    # It is a conditional that determines how to parse through the JSON based on the size of the array
+    # If the size of the array is one, it checks the first element of the JSON array.
+    # Otherwise, it focuses on the last element of the array.
+    # This has to be implemented since the array in the response JSON changes.
+    # This method ensures the API is able to handle all kinds of responses from the ADK.
     if len(response) > 1:
         return_body = response[2]["content"]["parts"][0]["text"]
     else:
