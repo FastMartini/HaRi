@@ -3,13 +3,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;     /* center vertically */
+    justify-content: center;
     gap: 24px;
     text-align: center;
     padding: 24px;
   }
   
-  .emp-title{ margin: 0; font-size: clamp(24px, 4vw, 36px); }
+  .emp-title{
+    margin: 0;
+    font-size: clamp(24px, 4vw, 36px);
+  }
   
   .agents-grid{
     display: grid;
@@ -18,9 +21,8 @@
     width: min(900px, 92vw);
   }
   
-  /* use your .get-started style as base; add tweaks for grid buttons */
   .agent-btn{
-    margin: 0;                 /* remove global margins so grid is tight */
+    margin: 0;
     width: 100%;
     padding: 14px 18px;
     border-radius: 14px;
@@ -30,24 +32,40 @@
     transition: transform 120ms ease, box-shadow .2s, background .2s, border-color .2s;
   }
   
-  /* highlight when selected */
   .agent-btn.selected{
-    background: #7c83ff;                 /* accent */
+    background: #7c83ff;
     color: #fff;
     border-color: #7c83ff;
     box-shadow: 0 0 0 3px rgba(124,131,255,.25);
   }
   
-  /* keep hover subtle, no layout shift */
-  .agent-btn:hover{ transform: translateY(-1px); }
-  .agent-btn:active{ transform: translateY(0); }
-  
-  .selected-readout{
-    color: #cfcfcf;
-    font-size: .95rem;
-    display: flex;
-    gap: 8px;
-    flex-wrap: wrap;
-    justify-content: center;
+  .agent-btn:hover{
+    transform: translateY(-1px);
   }
+  .agent-btn:active{
+    transform: translateY(0);
+  }
+  
+  .confirm-btn {
+    background: none;
+    border: none;
+    color: #888888;                   /* grey default */
+    font-size: 5rem;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px 0;
+    /* smooth fade when hover in/out */
+    transition: color 0.2s ease;      /* <— longer ease-out for smoother return */
+  }
+  
+  .confirm-btn:hover {
+    color: #7c83ff;                   /* purple on hover */
+  }
+  
+  .confirm-btn:focus,
+  .confirm-btn:focus-visible {
+    outline: none;
+  }
+  
+  
   

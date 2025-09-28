@@ -19,6 +19,11 @@ export default function EmployerDashboard() {
     setSelected(next);
   }
 
+  function confirm() {
+    // For now, just a proof of concept
+    alert(`Agents confirmed: ${Array.from(selected).join(", ") || "None"}`);
+  }
+
   return (
     <div className="emp-wrap">
       <h2 className="emp-title">Configure your onboarding agents</h2>
@@ -35,6 +40,10 @@ export default function EmployerDashboard() {
           </button>
         ))}
       </div>
+
+      <button className="get-started confirm-btn" onClick={confirm}>
+        Confirm?
+      </button>
     </div>
   );
 }
