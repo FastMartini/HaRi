@@ -1,5 +1,6 @@
 fastapi
 fastapi[standard]
+fastapi
 uvicorn
 pydantic
 google-adk

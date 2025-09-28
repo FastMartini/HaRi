@@ -91,6 +91,7 @@ async def ask(query: RequestQuery):
         }
     }
 
+
     # Sends the query to the API and saves the response it recieves.
     response = requests.post(run_url, json=body, headers=headers).json()
 
@@ -114,5 +115,6 @@ async def ask(query: RequestQuery):
 @app.get("/session")
 def session():
     response = requests.get(session_url, headers=headers).json()
+
 
     return response
