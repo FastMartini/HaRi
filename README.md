@@ -24,7 +24,8 @@ Backend:
         else:
           return_body = response[0]["content"]["parts"][0]["text"]
 
-* As the frontend grew with multiple nested views (employee, employer, communication, progress), managing a plethora of URL paths and view states was tricky and required careful state management and consistent routing.
+* As the frontend grew with multiple nested views, managing a plethora of URL paths and view states was tricky and required careful state management and consistent routing.
+<img width="145" height="152" alt="Screenshot 2025-09-28 at 9 14 40 AM" src="https://github.com/user-attachments/assets/e86ce058-ada2-4b12-a42b-5e5b2e7ae4b8" />
 
 ## Accomplishments that we're proud of
 * Built a full-stack, minimum viable product in a weekend that combines a sleek UI, a FastAPI backend, and a generative AI agent.
