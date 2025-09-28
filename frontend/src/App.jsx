@@ -31,7 +31,7 @@ export default function App() {
         {stage==='employer' && <EmployerDashboard onConfirm={()=>swap('employerTest')} />}
         {stage==='employerTest' && <EmployerTest />}
       </div>
-      <p className="read-the-docs">Powered by Google ADK + A2A</p>
+      <p className="read-the-docs">Powered by Google ADK + Gemini</p>
     </>
   )
 }
