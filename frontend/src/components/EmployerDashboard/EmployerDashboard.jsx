@@ -10,18 +10,13 @@ const AGENTS = [
   "Equipment Provisioning Agent"
 ];
 
-export default function EmployerDashboard() {
+export default function EmployerDashboard({ onConfirm = () => {} }) {
   const [selected, setSelected] = useState(new Set());
 
   function toggle(name) {
     const next = new Set(selected);
     next.has(name) ? next.delete(name) : next.add(name);
     setSelected(next);
-  }
-
-  function confirm() {
-    // For now, just a proof of concept
-    alert(`Agents confirmed: ${Array.from(selected).join(", ") || "None"}`);
   }
 
   return (
@@ -41,9 +36,8 @@ export default function EmployerDashboard() {
         ))}
       </div>
 
-      <button className="get-started confirm-btn" onClick={confirm}>
-        Confirm?
-      </button>
+      {/* Confirm navigates to the test dashboard */}
+      <button className="confirm-btn" onClick={onConfirm}>Confirm?</button>
     </div>
   );
 }
